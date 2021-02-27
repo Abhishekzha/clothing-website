@@ -15,8 +15,12 @@ const Header=({currentUser})=>(
         {
             currentUser ? 
             <div className='profile'>
-            <Link className='option'  onClick={()=>auth.signOut()}>SIGN OUT</Link>
+            <div  className='option sign-out'  onClick={()=>auth.signOut()}>SIGN OUT</div>
+            {currentUser.photoURL ?
             <img className='profile-pic' src={currentUser.photoURL} alt='profile'/>
+            : <img className='profile-pic unknown-pic'
+             src={`https://robohash.org/${currentUser.uid}`}
+             alt='profile'/>}
             </div>
             :
             <Link className='option' to='/signin'>SIGN IN</Link>
