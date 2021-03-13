@@ -8,7 +8,7 @@ const CollectionPage=({collection})=>{
     const {title,items}=collection;
     return(
     <div className='collection-page'>
-     <h1 className='title'>{title}</h1>
+     <h1 className='title'>{title.toUpperCase()}</h1>
      <div className='items'>
      {
          items.map(item=>(
